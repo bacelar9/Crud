@@ -58,7 +58,7 @@ class Create
         $this->data = $data;
 
         $this->getSintax();
-        $this->execute();
+//        $this->execute();
     }
 
     /**
@@ -104,13 +104,16 @@ class Create
 
     /** PRIVATE METHODS */
 
+    /**
+     * Obtém a PDO e Prepara a query
+     */
     private function connect()
     {
         $this->create = $this->conn->prepare($this->create);
     }
 
     /**
-     *
+     * Cria a sintaxe da query para Prepared Statements
      */
     private function getSintax()
     {
@@ -120,7 +123,7 @@ class Create
     }
 
     /**
-     *
+     * Obtém a Conexão e a Syntax, executa a query
      */
     private function execute()
     {
